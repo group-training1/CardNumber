@@ -2,7 +2,7 @@ package com.assignment.cardNumber;
 
 public class CardNumber {
       public static void main(String[] args) {
-          String cardNumber = "                ";
+          String cardNumber = "1234567899876543";
           CardNumber number = new CardNumber();
           System.out.println( (number.validity(cardNumber)? "Card Number is Valid "+'\n'+"Your Card Number is masked: "
                   +(number.maskCardNumber(cardNumber)): "The given number is Invalid Card Number"));
