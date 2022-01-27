@@ -7,15 +7,12 @@ public class CardNumberTest {
     CardNumber number = new CardNumber();
     @Test
     public void validityTest1() {
-        assertTrue("only 16 digits", number.validity("1234567899876543"));
+        assertTrue( number.validity("1234567899876543"));
     }
     @Test
-    public void validityTest2() {
+    public void negativeTest1() {
         assertFalse("contains more than or less than 16 digits",number.validity("1234567890009876543"));
         assertFalse(number.validity("12543"));
-    }
-    @Test
-    public void negativeNumberTest() {
         assertFalse("Negative numbers",number.validity("-1234567899876543"));
         assertFalse("Symbols",number.validity("123456*899876543"));
         assertFalse("Symbols",number.validity("123456/899876543"));
@@ -42,4 +39,5 @@ public class CardNumberTest {
     public void notNullTest1() {
         assertNotNull(number.maskCardNumber("1234567899876543"));
     }
+
 }
