@@ -17,6 +17,7 @@ public class CardNumberTest {
         assertFalse("Symbols",number.validity("123456*899876543"));
         assertFalse("Symbols",number.validity("123456/899876543"));
         assertNotEquals(true,number.validity("123456(8S9876543"));
+        assertFalse(number.validity("                  "));
     }
     @Test
     public void sizeOfCardNumberTest1() {
@@ -35,6 +36,11 @@ public class CardNumberTest {
     public void maskCardNumberTest2() {
         assertNotEquals(number.maskCardNumber("1234567899876543"),"1234 5678 9987 6543");
     }
+    @Test
+    public void nullTest1() {
+        assertNull(number.maskCardNumber(""));
+    }
+
     @Test
     public void notNullTest1() {
         assertNotNull(number.maskCardNumber("1234567899876543"));
